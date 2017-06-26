@@ -15,19 +15,11 @@ check_variable() {
 }
 
 download_repo() {
-  git clone https://github.com/ha100/dotfiles.git $repo_path
+  git clone --recursive -j4 https://github.com/ha100/dotfiles.git $repo_path
   if [ ! "$?" -eq '0' ]; then
     echo "Error: clone repository failed!"
     exit 1
   fi
-
-  pushd $repo_path
-  git submodule init && git submodule update --recursive
-  if [ ! "$?" -eq '0' ]; then
-    echo "Error: clone submodule failed!"
-    exit 1
-  fi
-  popd
 }
 
 download_fonts() {
