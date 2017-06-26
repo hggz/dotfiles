@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SESSIONS="objcio"
 
 function has-session {

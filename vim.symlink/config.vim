@@ -24,7 +24,15 @@ set nowb
 
 " ================ indentation ======================
 
-set list listchars=tab:\│\
+if $TERM =~ '-256color'
+  set t_Co=256
+endif
+
+set term=screen-256color
+set encoding=utf8
+set termencoding=utf-8
+
+set list listchars=tab:\│\ 
 
 set autoindent
 set smartindent
