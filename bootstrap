@@ -34,7 +34,7 @@ download_fonts() {
 link_files() {
   ln -sf $HOME/.ha100/vimrc.symlink $HOME/.vimrc
   ln -sf $HOME/.ha100/vim.symlink $HOME/.vim
-  ln -sf $HOME/.ha100/tmux.symlink $HOME/.tmux
+  ln -sf $HOME/.ha100/tmux.symlink $HOME/.tmux.conf
 }
 
 check_variable
