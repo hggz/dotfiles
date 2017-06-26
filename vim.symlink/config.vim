@@ -14,6 +14,7 @@ set visualbell                  "no sounds
 set autoread                    "reload files changed outside vim
 
 syntax on                       "turn on syntax highlighting
+set laststatus=2                "needed for airline to work
 
 " ================ turn off swap files ==============
 
@@ -22,6 +23,8 @@ set nobackup
 set nowb
 
 " ================ indentation ======================
+
+set list listchars=tab:\│\
 
 set autoindent
 set smartindent
@@ -51,3 +54,29 @@ function! NumberToggle()
 endfunc
 
 nnoremap <leader>nn :call NumberToggle()<cr>
+
+autocmd filetype swift nnoremap <C-b> :w <bar> exec '!swift build && ./.build/debug/'.shellescape('%:r')<CR>
+
+
+"==========================================================================="
+"" Make Sure that Vim returns to the same line when we reopen a file"
+"augroup line_return
+"      au!
+"          au BufReadPost *
+"                          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+"                          \ execute 'normal! g`"zvzz' |
+"                          \ endif
+"        augroup END
+
+
+""==========================================================================="
+"" USING VIM AS HEX EDITOR
+
+map <Leader>hon :%!xxd<CR>
+map <Leader>hof :%!xxd -r<CR>
+
+"==========================================================================="
+" bufferMovement
+
+nnoremap <Leader>[ :bprevious<cr>
+nnoremap <Leader>] :bnext<cr>

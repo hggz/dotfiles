@@ -37,6 +37,7 @@ link_files() {
   ln -sf $HOME/.ha100/vimrc.symlink $HOME/.vimrc
   ln -sf $HOME/.ha100/vim.symlink $HOME/.vim
   ln -sf $HOME/.ha100/tmux.symlink $HOME/.tmux.conf
+  ln -sf $HOME/.ha100/swimma.symlink /usr/local/bin/swimma
 }
 
 check_variable

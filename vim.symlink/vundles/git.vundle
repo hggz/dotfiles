@@ -1,0 +1,2 @@
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'tpope/vim-fugitive.git'
