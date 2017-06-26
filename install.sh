@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install_vim_plugins() {
-    env SHELL="/bin/sh" vim -u "$HOME/.vim/vundle.vim" +BundleInstall +BundleClean +qall || {
+    env SHELL="/bin/sh" vim -u "$HOME/.vim/vundle.vim" +PluginInstall +qall || {
         echo "Error: install vim plugins failed!"
         exit 1
     }

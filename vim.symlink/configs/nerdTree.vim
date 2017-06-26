@@ -1,5 +1,5 @@
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
