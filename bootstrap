@@ -15,7 +15,7 @@ check_variable() {
 }
 
 download_repo() {
-  git clone --recursive -j4 https://github.com/ha100/dotfiles.git $repo_path
+  git clone --recurse-submodules --recursive -j4 https://github.com/ha100/dotfiles.git $repo_path
   cd $repo_path
   git submodule update --init --recursive
   if [ ! "$?" -eq '0' ]; then
