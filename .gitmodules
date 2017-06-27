@@ -46,3 +46,6 @@
 [submodule "vim.symlink/bundle/YouCompleteMe"]
 	path = vim.symlink/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim.symlink/bundle/ctrlp.vim"]
+	path = vim.symlink/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
