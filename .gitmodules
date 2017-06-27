@@ -49,3 +49,6 @@
 [submodule "vim.symlink/bundle/ctrlp.vim"]
 	path = vim.symlink/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "vim.symlink/bundle/tagbar"]
+	path = vim.symlink/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
