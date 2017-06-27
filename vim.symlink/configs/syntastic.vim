@@ -5,7 +5,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive
 let g:syntastic_aggregate_errors = 1          " show multiple checkers errors
 "let g:syntastic_objc_checker = 'oclint'         " Tell it to use clang instead of gcc
 "let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint', 'swiftc']
-let g:syntastic_swift_checkers = [ 'swift']
+let g:syntastic_swift_checkers = [ 'swiftlint', 'swiftc']
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
@@ -19,19 +19,9 @@ let g:syntastic_enable_signs=1
 "set statusline+=%*
 ""nnoremap <silent> ` :Errors<CR>
 nnoremap <leader>ee :Errors<CR>
-set encoding=utf8             " airLine
-set termencoding=utf-8
-
-" ---------------
-"  " Color
-"  " ---------------
-set background=dark
-
-let g:solarized_termcolors=256
-"colorscheme solarized
-"let g:solarized_italic=0
 
 let g:syntastic_loc_list_height=0
+let g:syntastic_swift_swiftlint_use_defaults = 1
 
 "let g:syntastic_error_symbol = '❌ '
 let g:syntastic_style_error_symbol = '⁉️'

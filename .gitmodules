@@ -37,3 +37,12 @@
 [submodule "vim.symlink/bundle/iCompleteMe"]
 	path = vim.symlink/bundle/iCompleteMe
 	url = https://github.com/jerrymarino/iCompleteMe
+[submodule "vim.symlink/bundle/swift.vim"]
+	path = vim.symlink/bundle/swift.vim
+	url = https://github.com/keith/swift.vim
+[submodule "vim.symlink/bundle/vim-colors-solarized"]
+	path = vim.symlink/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim.symlink/bundle/YouCompleteMe"]
+	path = vim.symlink/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe

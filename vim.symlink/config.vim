@@ -24,6 +24,10 @@ set nowb
 
 " ================ indentation ======================
 
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+
 if $TERM =~ '-256color'
   set t_Co=256
 endif
