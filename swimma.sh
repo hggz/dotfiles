@@ -15,7 +15,7 @@ function except
 
 function session-objcio
 {
-    tmux -u new-session -d -s objcio vim
+    tmux -u new-session -d -s objcio DYLD_FORCE_FLAT_NAMESPACE=1 DYLD_INSERT_LIBRARIES=/opt/local/lib/libpython2.7.dylib vim
     tmux splitw -v -p 25
     tmux selectw -t 0
     tmux select-pane -t 0

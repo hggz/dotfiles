@@ -2,41 +2,71 @@ let mapleader= " "
 
 runtime! configs/**/*.vim
 
-" ================ general config ====================
+autocmd BufNewFile,BufRead *.swift set filetype=swift
+autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)
 
-set number                      "show line numbers
-set backspace=indent,eol,start  "allow backspace in insert mode
-set history=1000                "store lots of :cmdline history
-set showcmd                     "show incomplete cmds down the bottom
-set showmode                    "show current mode down the bottom
-set gcr=a:blinkon0              "disable cursor blink
-set visualbell                  "no sounds
-set autoread                    "reload files changed outside vim
+"============================= general config =================================
 
-syntax on                       "turn on syntax highlighting
-set laststatus=2                "needed for airline to work
+set number                                                                      "show line numbers
+set backspace=indent,eol,start                                                  "allow backspace in insert mode
+set history=1000                                                                "store lots of :cmdline history
+set showcmd                                                                     "show incomplete cmds down the bottom
+set showmode                                                                    "show current mode down the bottom
+set gcr=a:blinkon0                                                              "disable cursor blink
 
-" ================ turn off swap files ==============
+"=========================== disable visual bell ==============================
+
+set visualbell                                                                  "no sounds
+set noeb vb t_vb=
+
+set autoread                                                                    "reload files changed outside vim
+
+syntax on                                                                       "turn on syntax highlighting
+set laststatus=2                                                                "needed for airline to work
+
+"=========================== turn off swap files ==============================
 
 set noswapfile
 set nobackup
 set nowb
 
-" ================ indentation ======================
+"============================= indentation ====================================
 
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+"set t_Co=16
 
 if $TERM =~ '-256color'
   set t_Co=256
 endif
 
-set term=screen-256color
-set encoding=utf8
-set termencoding=utf-8
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
 
-set list listchars=tab:\│\ 
+set term=screen-256color
+set encoding=utf-8
+
+"=========================== spell checking ===================================
+
+set spelllang=en_us,sk,cz
+set complete+=kspell                                                            " Word completion
+map <F7> :setlocal spell!<CR>                                                   " Toggle spell check
+
+autocmd FileType gitcommit setlocal spell                                       " Enable spell checking
+autocmd FileType markdown setlocal spell
+autocmd FileType text setlocal spell
+autocmd FileType rst setlocal spell
+
+set termencoding=utf-8
+set ttyfast
+
+set list listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:⎵,eol:¬
+"set nolist                                                                     " Hide by default
+"set listchars=tab:▸\ ,trail:-,extends:>,precedes:<,nbsp:⎵,eol:¬
+
+if has('mouse')
+  set mouse=a
+  set ttymouse=xterm2
+endif
 
 set autoindent
 set smartindent
@@ -46,16 +76,15 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-" auto indent pasted text
-nnoremap p p=`]<C-o>
+nnoremap p p=`]<C-o>                                                            " auto indent pasted text
 nnoremap P P=`]<C-o>
 
-" ================ search ===========================
+"================================ search ======================================
 
-set incsearch                   " find the next match as we type the search
-set hlsearch                    " highlight searches by default
-set ignorecase                  " ignore case when searching...
-set smartcase                   " ...unless we type a capital
+set incsearch                                                                   " find the next match as we type the search
+set hlsearch                                                                    " highlight searches by default
+set ignorecase                                                                  " ignore case when searching...
+set smartcase                                                                   " ...unless we type a capital
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -70,8 +99,8 @@ nnoremap <leader>nn :call NumberToggle()<cr>
 autocmd filetype swift nnoremap <C-b> :w <bar> exec '!swift build && ./.build/debug/'.shellescape('%:r')<CR>
 
 
-"==========================================================================="
-"" Make Sure that Vim returns to the same line when we reopen a file"
+"============================================================================="
+" Make Sure that Vim returns to the same line when we reopen a file"
 "augroup line_return
 "      au!
 "          au BufReadPost *
@@ -81,14 +110,23 @@ autocmd filetype swift nnoremap <C-b> :w <bar> exec '!swift build && ./.build/de
 "        augroup END
 
 
-""==========================================================================="
-"" USING VIM AS HEX EDITOR
+"============================= USING VIM AS HEX EDITOR ========================"
 
 map <Leader>hon :%!xxd<CR>
 map <Leader>hof :%!xxd -r<CR>
 
-"==========================================================================="
-" bufferMovement
+"============================== bufferMovement ================================"
 
 nnoremap <Leader>[ :bprevious<cr>
 nnoremap <Leader>] :bnext<cr>
+
+
+set ruler                                                                       " Show ruler
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+set nofoldenable                                                                " disable folding
+set colorcolumn=80,120
+
+augroup reload_myvimrc                                                          " Watch my .vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END

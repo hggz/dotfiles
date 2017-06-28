@@ -1,2 +1,3 @@
 "Plugin 'jerrymarino/iCompleteMe'
+Plugin 'https://github.com/mitsuse/autocomplete-swift'
 Plugin 'Valloric/YouCompleteMe'
