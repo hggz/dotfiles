@@ -24,10 +24,7 @@ downloadRepo() {
 }
 
 compileVim() {
-  cd /opt
-  git clone --depth 1 https://github.com/vim/vim
-
-  cd /opt/vim
+  cd ~/.ha100/vim.symlink/bundle/vim
 
   ./configure --prefix="/usr/local" \
     --enable-gui=no \
@@ -66,8 +63,9 @@ linkFiles() {
   ln -sf $HOME/.ha100/vim.symlink $HOME/.vim
   ln -sf $HOME/.ha100/tmux.symlink $HOME/.tmux.conf
   ln -sf $HOME/.ha100/ctags.symlink $HOME/.ctags
+  ln -sf $HOME/.ha100/lldbinit-lldb.symlink $HOME/.lldbinit-lldb
   ln -sf $HOME/.ha100/swimma.sh /usr/local/bin/swimma
-  chmod +x $Home/.ha100/swimma.sh
+  chmod +x $HOME/.ha100/swimma.sh
 }
 
 checkVariable
