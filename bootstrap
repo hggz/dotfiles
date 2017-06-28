@@ -54,6 +54,22 @@ installVoltron() {
   ./install.sh
 }
 
+compileYouCompleteMe() {
+  cd ~/.vim/bundler/YouCompleterMe/
+  git submodule update --init --recursive
+  CXX="clang++" ./install.py --system-libclang --system-boost --clang-completer #--gocode-completer --tern-completer
+}
+
+compileHtop() {
+  cd ~/.vim/bundler/htop/
+  ./autogen.sh
+  ./configure
+  make
+  make install
+  echo "export HTOPRC=\"~/.ha100/htoprc.symlink\"" > ~/.profile
+  profile ~/.profile
+}
+
 downloadFonts() {
   git clone https://github.com/powerline/fonts.git
   cd fonts
@@ -78,6 +94,8 @@ downloadRepo
 downloadFonts
 linkFiles
 installVoltron
+compileYouCompleteMe
+compileHtop
 $repo_path/install.sh
 compileVim
 

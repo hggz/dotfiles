@@ -58,3 +58,6 @@
 [submodule "vim.symlink/bundle/vim"]
 	path = vim.symlink/bundle/vim
 	url = https://github.com/vim/vim
+[submodule "vim.symlink/bundle/htop"]
+	path = vim.symlink/bundle/htop
+	url = https://github.com/ha100/htop

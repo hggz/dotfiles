@@ -121,10 +121,10 @@ nnoremap <Leader>[ :bprevious<cr>
 nnoremap <Leader>] :bnext<cr>
 
 
-set ruler                                                                       " Show ruler
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-set nofoldenable                                                                " disable folding
-set colorcolumn=80,120
+"set ruler                                                                       " Show ruler
+"set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+"set nofoldenable                                                                " disable folding
+"set colorcolumn=80,120
 
 augroup reload_myvimrc                                                          " Watch my .vimrc
   autocmd!
