@@ -49,6 +49,11 @@ compileVim() {
   sudo make install
 }
 
+installVoltron() {
+  cd ~/.ha100/vim.symlink/bundle/voltron
+  ./install.sh
+}
+
 downloadFonts() {
   git clone https://github.com/powerline/fonts.git
   cd fonts
@@ -72,6 +77,7 @@ checkVariable
 downloadRepo
 downloadFonts
 linkFiles
+installVoltron
 $repo_path/install.sh
 compileVim
 
