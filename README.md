@@ -1,3 +1,5 @@
+![swimma](https://user-images.githubusercontent.com/2852881/27664610-cb3a7f5e-5c68-11e7-9ecd-b398b58c719d.png)
+
 ## Installation
 
 You can install this via the command-line with either curl or wget.
