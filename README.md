@@ -2,7 +2,7 @@
 
 ## Installation
 
-You can install this via the command-line with either curl or wget.
+you can install this via the commandLine with either curl or wget.
 
 via curl
 
@@ -34,3 +34,23 @@ if your vim keep crashing upon start, try to inject it with this
 ```
 DYLD_FORCE_FLAT_NAMESPACE=1 DYLD_INSERT_LIBRARIES=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib vim
 ```
+
+## Basic Usage
+
+| no  | comment | hotKeys |
+|:----- | :------ | :------ |
+|  1) | fileInspector on the left | CTRL + N |
+|  2) | tagBar on the right | F8 |
+|  3) | remove whiteSpace in th file | F1 |
+|  4) | toggle sourceCode syntax check & linter | F4 |
+|  5) | show undoTree | F5 |
+|  6) | toggle lineNumbers to relative & back | SPACE + n + n |
+|  7) | open new file in buffer | :e fileName.swift |
+|  8) | easy switch buffers | SPACE + [1...9] |
+|  9) | fuzzy file finder | CTRL + P |
+| 10) | move between window splits | CTRL + [HJKL] |
+| 11) | create new tmux window | CTRL + B + C |
+| 12) | move between tmux windows | CTRL + B + [PN] |
+
+
+
