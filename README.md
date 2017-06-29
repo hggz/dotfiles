@@ -1,4 +1,5 @@
-![swimma](https://user-images.githubusercontent.com/2852881/27664610-cb3a7f5e-5c68-11e7-9ecd-b398b58c719d.png)
+![swimma](https://user-images.githubusercontent.com/2852881/27667478-3d63409a-5c7b-11e7-8ed3-6337e007dad7.png)
+[more screenShots](https://github.com/ha100/dotfiles/issues/1)
 
 ## Installation
 
