@@ -12,11 +12,15 @@
 "let g:icm_show_diagnostics_ui = 1
 "let g:icm_server_use_vim_stdout = 1
 "let g:icm_server_log_level = 'debug'
-"
+
+"let g:ycm_path_to_python_interpreter="/opt/local/bin/python2.7"
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'                    " YouCompleteMe
 let g:ycm_extra_conf_globlist=['~/.vim/*']
+let g:ycm_confirm_extra_conf = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_filetype_blacklist={
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_filetype_blacklist = {
             \ 'vim' : 1,
             \ 'tagbar' : 1,
             \ 'qf' : 1,

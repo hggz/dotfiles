@@ -6,6 +6,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#exclude_preview = 1
+"let g:airline#extensions#tabline#show_tab_type = 0
+"let g:airline#extensions#tabline#show_close_button = 0
+"let g:airline#extensions#bufferline#enabled = 0
+"let g:airline#extensions#tabline#show_splits = 0
 
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
