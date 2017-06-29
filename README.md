@@ -51,6 +51,8 @@ DYLD_FORCE_FLAT_NAMESPACE=1 DYLD_INSERT_LIBRARIES=/opt/local/Library/Frameworks/
 | 10) | move between window splits | CTRL + [HJKL] |
 | 11) | create new tmux window | CTRL + B + C |
 | 12) | move between tmux windows | CTRL + B + [PN] |
+| 13) | comment out the line | gcc |
+| 14) | display / hide visual indentation lines | SPACE + l |
 
 
 

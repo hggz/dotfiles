@@ -61,3 +61,9 @@
 [submodule "vim.symlink/bundle/htop"]
 	path = vim.symlink/bundle/htop
 	url = https://github.com/ha100/htop
+[submodule "vim.symlink/bundle/vim-commentary"]
+	path = vim.symlink/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim.symlink/bundle/indentLine"]
+	path = vim.symlink/bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine

@@ -43,7 +43,7 @@ colorscheme solarized
 let g:solarized_termcolors=256
 
 set term=screen-256color
-set encoding=utf-8
+set encoding=utf8
 
 "=========================== spell checking ===================================
 
@@ -58,10 +58,6 @@ autocmd FileType rst setlocal spell
 
 set termencoding=utf-8
 set ttyfast
-
-set list listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:⎵,eol:¬
-"set nolist                                                                     " Hide by default
-"set listchars=tab:▸\ ,trail:-,extends:>,precedes:<,nbsp:⎵,eol:¬
 
 if has('mouse')
   set mouse=a
