@@ -38,7 +38,7 @@ downloadRepo() {
 compileVim() {
   cd ~/.ha100/vim.symlink/bundle/vim
 
-  ./configure --prefix="/usr/local" \
+  `./configure --prefix="/usr/local" \
     --enable-gui=no \
     --enable-largefile \
     --with-tlib=ncurses \
@@ -54,11 +54,11 @@ compileVim() {
     --enable-tclinterp \
     --enable-pythoninterp \
     --enable-python3interp \
-    --with-compiledby="ha100 <hastik@antik.sk>"
+    --with-compiledby="ha100 <hastik@antik.sk>"`
 
-  make -j4
+  `make -j4`
 
-  sudo make install
+  `sudo make install`
 }
 
 installVoltron() {
