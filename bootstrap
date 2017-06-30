@@ -52,12 +52,22 @@ compileVim() {
 installVoltron() {
   cd ~/.ha100/vim.symlink/bundle/voltron
   ./install.sh
+  sudo pip install voltron-web
+  echo "checkout http://localhost:5555"
 }
 
 compileYouCompleteMe() {
   cd ~/.vim/bundler/YouCompleterMe/
   git submodule update --init --recursive
   CXX="clang++" ./install.py --system-libclang --system-boost --clang-completer #--gocode-completer --tern-completer
+}
+
+setupGitAutocompletion() {
+  mkdir -p ~/.ha100/Scripts
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.ha100/Scripts/.git-completion.bash
+  echo "if [ -f ~/.ha100/Scripts/.git-completion.bash ]; then
+    . ~/.ha100/Scripts/.git-completion.bash
+  fi" >> ~/.profile
 }
 
 compileHtop() {
@@ -106,6 +116,7 @@ linkFiles
 installVoltron
 compileYouCompleteMe
 compileHtop
+setupGitAutocompletion
 $repo_path/install.sh
 compileVim
 
