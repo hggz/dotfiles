@@ -70,6 +70,11 @@ setupGitAutocompletion() {
   fi" >> ~/.profile
 }
 
+setupShell() {
+  echo "source ~/.ha100/.shell_prompt.sh" >> ~/.profile
+  source ~/.profile
+}
+
 compileHtop() {
   cd ~/.vim/bundler/htop/
   ./autogen.sh
@@ -117,6 +122,7 @@ installVoltron
 compileYouCompleteMe
 compileHtop
 setupGitAutocompletion
+setupShell
 $repo_path/install.sh
 compileVim
 
