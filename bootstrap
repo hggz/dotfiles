@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+OS="`uname`"
+
+case $OS in
+  'Linux')
+    SOURCE='.bashrc'
+    ;;
+  'Darwin')
+    SOURCE='.profile'
+    ;;
+  *) ;;
+esac
+
 repo_path=$HOME/.ha100
 
 checkVariable() {
@@ -67,12 +79,12 @@ setupGitAutocompletion() {
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.ha100/Scripts/.git-completion.bash
   echo "if [ -f ~/.ha100/Scripts/.git-completion.bash ]; then
     . ~/.ha100/Scripts/.git-completion.bash
-  fi" >> ~/.profile
+  fi" >> ~/${SOURCE}
 }
 
 setupShell() {
-  echo "source ~/.ha100/.shell_prompt.sh" >> ~/.profile
-  source ~/.profile
+  echo "source ~/.ha100/.shell_prompt.sh" >> ~/${SOURCE}
+  source ~/${SOURCE}
 }
 
 compileHtop() {
@@ -81,8 +93,8 @@ compileHtop() {
   ./configure
   make
   make install
-  echo "export HTOPRC=\"~/.ha100/htoprc.symlink\"" > ~/.profile
-  profile ~/.profile
+  echo "export HTOPRC=\"~/.ha100/htoprc.symlink\"" > ~/${SOURCE}
+  source ~/${SOURCE}
 }
 
 downloadFonts() {
@@ -99,8 +111,8 @@ compileOclint() {
   ./make
 
   echo "OCLINT_HOME=~/.ha100/vim.symlink/bundle/oclint/build/oclint-release
-  export PATH=$OCLINT_HOME/bin:$PATH" >> ~/.profile
-  source ~/.profile
+  export PATH=$OCLINT_HOME/bin:$PATH" >> ~/${SOURCE}
+  source ~/${SOURCE}
 }
 
 linkFiles() {
