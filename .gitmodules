@@ -67,3 +67,6 @@
 [submodule "vim.symlink/bundle/indentLine"]
 	path = vim.symlink/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "vim.symlink/bundle/oclint"]
+	path = vim.symlink/bundle/oclint
+	url = https://github.com/oclint/oclint

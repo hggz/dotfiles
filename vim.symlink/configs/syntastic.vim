@@ -16,7 +16,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_objc_checker = 'oclint'                                        " Tell it to use clang instead of gcc
+let g:syntastic_objc_checker = [ 'clang', 'oclint']                                        " Tell it to use clang instead of gcc
 let g:syntastic_swift_checkers = [ 'swiftlint', 'swiftc', 'swiftpm' ]                      " ['swiftpm', 'swiftlint', 'swiftc']
 let g:syntastic_loc_list_height = 0
 let g:syntastic_swift_swiftlint_use_defaults = 1
@@ -32,7 +32,7 @@ highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
 let g:syntastic_error_symbol = '☠' "'❌ '
-let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_style_error_symbol = '💥'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩 '
 "let g:syntastic_error_symbol = "✗"

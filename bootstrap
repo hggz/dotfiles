@@ -79,6 +79,15 @@ downloadFonts() {
   rm -rf fonts
 }
 
+compileOclint() {
+  cd ~/.ha100/vim.symlink/bundle/oclint/oclint-scripts/
+  ./make
+
+  echo "OCLINT_HOME=~/.ha100/vim.symlink/bundle/oclint/build/oclint-release
+  export PATH=$OCLINT_HOME/bin:$PATH" >> ~/.profile
+  source ~/.profile
+}
+
 linkFiles() {
   ln -sf $HOME/.ha100/vimrc.symlink $HOME/.vimrc
   ln -sf $HOME/.ha100/vim.symlink $HOME/.vim
@@ -92,6 +101,7 @@ linkFiles() {
 checkVariable
 downloadRepo
 downloadFonts
+compileOclint
 linkFiles
 installVoltron
 compileYouCompleteMe
