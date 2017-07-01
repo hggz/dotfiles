@@ -27,7 +27,7 @@ checkVariable() {
 }
 
 downloadRepo() {
-  git clone --recursive -j4 https://github.com/ha100/dotfiles.git $repo_path
+  git clone --recursive https://github.com/ha100/dotfiles.git $repo_path
   cd $repo_path
   if [ ! "$?" -eq '0' ]; then
     echo "Error: clone repository failed!"
@@ -38,7 +38,9 @@ downloadRepo() {
 compileVim() {
   cd ~/.ha100/vim.symlink/bundle/vim
 
-  `./configure --prefix="/usr/local" \
+  `./configure 
+  # LDFLAGS="-L/usr/non-standard-path/python/lib"
+    --prefix="/usr/local" \
     --enable-gui=no \
     --enable-largefile \
     --with-tlib=ncurses \
@@ -115,6 +117,10 @@ compileOclint() {
   source ~/${SOURCE}
 }
 
+setupCoreML() {
+  pip install -U coremltools
+}
+
 linkFiles() {
   ln -sf $HOME/.ha100/vimrc.symlink $HOME/.vimrc
   ln -sf $HOME/.ha100/vim.symlink $HOME/.vim
@@ -135,6 +141,7 @@ compileYouCompleteMe
 compileHtop
 setupGitAutocompletion
 setupShell
+setupCoreML
 $repo_path/install.sh
 compileVim
 
