@@ -115,6 +115,10 @@ compileOclint() {
   source ~/${SOURCE}
 }
 
+setupCoreML() {
+  pip install -U coremltools
+}
+
 linkFiles() {
   ln -sf $HOME/.ha100/vimrc.symlink $HOME/.vimrc
   ln -sf $HOME/.ha100/vim.symlink $HOME/.vim
@@ -135,6 +139,7 @@ compileYouCompleteMe
 compileHtop
 setupGitAutocompletion
 setupShell
+setupCoreML
 $repo_path/install.sh
 compileVim
 
