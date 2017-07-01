@@ -27,7 +27,7 @@ checkVariable() {
 }
 
 downloadRepo() {
-  git clone --recursive -j4 https://github.com/ha100/dotfiles.git $repo_path
+  git clone --recursive https://github.com/ha100/dotfiles.git $repo_path
   cd $repo_path
   if [ ! "$?" -eq '0' ]; then
     echo "Error: clone repository failed!"
