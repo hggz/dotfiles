@@ -14,6 +14,9 @@ set showcmd                                                                     
 set showmode                                                                    "show current mode down the bottom
 set gcr=a:blinkon0                                                              "disable cursor blink
 
+vmap <C-x> :!pbcopy<CR>                                                         "copy visual to macOS clipboard
+vmap <C-c> :w !pbcopy<CR><CR>
+
 "=========================== disable visual bell ==============================
 
 set visualbell                                                                  "no sounds
