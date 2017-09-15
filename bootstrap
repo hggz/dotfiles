@@ -64,10 +64,36 @@ compileVim() {
 }
 
 installVoltron() {
+  echo "must use system python!!! sudo port select python python27-apple"
   cd ~/.ha100/vim.symlink/bundle/voltron
+  sudo easy_install wcwidth
+  sudo easy_install werkzeug
+  sudo easy_install itsdangerous
+  sudo easy_install click
+  sudo port install graphviz
+  sudo port install librsvg
+  sudo port install plotutils
+  sudo easy_install scruffy
+  sudo easy_install scruffington
+  sudo gem install tmuxinator
   ./install.sh
   sudo pip install voltron-web
   echo "checkout http://localhost:5555"
+  echo "name: voltron
+root: ~/
+windows:
+  # two spaces
+  - madhax:
+      # four spaces
+      layout: 15a8,169x41,0,0{147x41,0,0[147x13,0,0{81x13,0,0,60,65x13,82,0,61},147x19,0,14,62,147x7,0,34{89x7,0,34,63,57x7,90,34,64}],21x41,148,0,65}
+      panes:
+        # two spaces
+        - voltron view disarm
+        - voltron view bp
+        - lldb
+        - voltron view stack
+        - voltron view bt
+        - voltron view reg" >> ~/.tmuxinator/voltron.yml
 }
 
 compileYouCompleteMe() {
