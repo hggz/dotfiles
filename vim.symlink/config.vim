@@ -14,6 +14,7 @@ set history=1000                                                                
 set showcmd                                                                     "show incomplete cmds down the bottom
 set showmode                                                                    "show current mode down the bottom
 set gcr=a:blinkon0                                                              "disable cursor blink
+set clipboard=unnamed
 
 vmap <C-x> :!pbcopy<CR>                                                         "copy visual to macOS clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
