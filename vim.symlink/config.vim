@@ -49,6 +49,10 @@ let g:solarized_termcolors=256
 set term=screen-256color
 set encoding=utf8
 
+"================================ sort ========================================
+
+vnoremap <leader>s :sort<CR>
+
 "=========================== spell checking ===================================
 
 set spelllang=en_us,sk,cz
