@@ -102,7 +102,6 @@ nnoremap <leader>nn :call NumberToggle()<cr>
 
 autocmd filetype swift nnoremap <C-b> :w <bar> exec '!swift build && ./.build/debug/'.shellescape('%:r')<CR>
 
-
 "============================================================================="
 " Make Sure that Vim returns to the same line when we reopen a file"
 "augroup line_return
@@ -129,3 +128,8 @@ nnoremap <Leader>] :bnext<cr>
 "set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 "set nofoldenable                                                                " disable folding
 "set colorcolumn=80,120
+
+"============================= codeBlock indent ================================"
+
+vnoremap < <gv
+vnoremap > >gv
