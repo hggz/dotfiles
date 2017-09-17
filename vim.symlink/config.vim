@@ -4,7 +4,7 @@ runtime! configs/**/*.vim
 
 autocmd BufNewFile,BufRead *.swift set filetype=swift
 autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)
-autocmd! bufwritepost .vimrc source %
+autocmd! BufWritePost .vimrc source %
 
 "============================= general config =================================
 
@@ -125,8 +125,3 @@ nnoremap <Leader>] :bnext<cr>
 "set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 "set nofoldenable                                                                " disable folding
 "set colorcolumn=80,120
-
-augroup reload_myvimrc                                                          " Watch my .vimrc
-  autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
