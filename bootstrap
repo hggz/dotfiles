@@ -63,6 +63,19 @@ compileVim() {
   `sudo make install`
 }
 
+installCtags() {
+  #git clone https://github.com/universal-ctags/ctags
+  https://github.com/mcormier/ctags-ObjC-5.8.1
+  sudo port install libyaml
+  ./autogen.sh
+  ./configure
+  make
+  sudo make install
+  cd /System/Library/Frameworks
+  ctags --languages=ObjC --langmap=ObjC:.h.m --append -f ~/.ha100/tags -R .
+  #currently approximately 40MB of text. need to filter out some nonsense 
+}
+
 installVoltron() {
   echo "must use system python!!! sudo port select python python27-apple"
   cd ~/.ha100/vim.symlink/bundle/voltron
