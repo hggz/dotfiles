@@ -37,5 +37,15 @@ wget hhttps://raw.githubusercontent.com/ha100/dotfiles/master/bootstrap -O - | s
 | 13) | comment out the line | gcc, gcip, gc3j |
 | 14) | display / hide visual indentation lines | SPACE + l |
 
+## Errors
+
+tagBar
+
+``` shell
+Error detected while processing function airline#extensions#tagbar#currenttag[3]..tagbar#currenttag[16]..<SNR>171_Init[4]..<SNR>171_CheckForExCtags[69]..<SNR>171_CheckExCtagsVersion:                                                        
+line   15:                                                                                                                                                                                                                                    
+E684: list index out of range: 1
+```
+make sure g:tagbar_ctags_bin points to the output of the `which ctags`
 
 
