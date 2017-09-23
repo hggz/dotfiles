@@ -38,25 +38,29 @@ downloadRepo() {
 compileVim() {
   cd ~/.ha100/vim.symlink/bundle/vim
 
+  sudo port install tcl lua perl5 ruby python36 cscope
+
   `./configure 
-  # LDFLAGS="-L/usr/non-standard-path/python/lib"
-    --prefix="/usr/local" \
-    --enable-gui=no \
-    --enable-largefile \
-    --with-tlib=ncurses \
-    --with-features=huge \
-    --disable-netbeans \
-    --without-x \
-    --disable-nls \
-    --enable-multibyte \
-    --enable-cscope \
-    --enable-luainterp \
-    --enable-rubyinterp \
-    --enable-perlinterp \
-    --enable-tclinterp \
-    --enable-pythoninterp \
-    --enable-python3interp \
-    --with-compiledby="ha100 <hastik@antik.sk>"`
+  --enable-gui=no \
+  --enable-largefile \
+  --with-tlib=ncurses \
+  --with-features=huge \
+  --disable-netbeans \
+  --disable-nls \
+  --enable-feature=browse \
+  --enable-multibyte \
+  --enable-cscope \
+  --enable-luainterp \
+  --with-lua-prefix="/opt/local/bin/lua" \
+  --enable-rubyinterp \
+  --with-ruby-command="/usr/bin/ruby" \
+  --enable-perlinterp \
+  --enable-tclinterp \
+  --enable-pythoninterp \
+  --with-python-config-dir=/usr/lib/python2.7/config \
+  --enable-python3interp=yes \
+  --with-python3-config-dir=/usr/lib/python3.6/config \
+  --with-compiledby="ha100 <thastik@gmail.com>"`
 
   `make -j4`
 
@@ -100,21 +104,6 @@ installVoltron() {
   ./install.sh
   sudo pip install voltron-web
   echo "checkout http://localhost:5555"
-  echo "name: voltron
-root: ~/
-windows:
-  # two spaces
-  - madhax:
-      # four spaces
-      layout: 15a8,169x41,0,0{147x41,0,0[147x13,0,0{81x13,0,0,60,65x13,82,0,61},147x19,0,14,62,147x7,0,34{89x7,0,34,63,57x7,90,34,64}],21x41,148,0,65}
-      panes:
-        # two spaces
-        - voltron view disarm
-        - voltron view bp
-        - lldb
-        - voltron view stack
-        - voltron view bt
-        - voltron view reg" >> ~/.tmuxinator/voltron.yml
 }
 
 compileYouCompleteMe() {
