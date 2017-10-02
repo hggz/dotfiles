@@ -83,6 +83,7 @@ installCtags() {
 installVoltron() {
   echo "must use system python!!! sudo port select python python27-apple"
   cd ~/.ha100/vim.symlink/bundle/voltron
+  pip install pyyaml
   sudo easy_install flask
   sudo easy_install flask_restful
   sudo easy_install blessed
@@ -100,7 +101,6 @@ installVoltron() {
   sudo port install plotutils
   sudo easy_install scruffy
   sudo easy_install scruffington
-  sudo gem install tmuxinator
   ./install.sh
   sudo pip install voltron-web
   echo "checkout http://localhost:5555"
