@@ -134,3 +134,9 @@ nnoremap <Leader>] :bnext<cr>
 
 vnoremap < <gv
 vnoremap > >gv
+
+"===================== always split windows vertically ========================="
+
+set splitright
+set diffopt+=vertical
+silent! set splitvertical
