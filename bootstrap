@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OS="`uname`"
+OS="`uname -s`"
 
 case $OS in
   'Linux')
@@ -81,6 +81,13 @@ installCtags() {
 }
 
 installVoltron() {
+
+if [[ $OS == 'Linux' ]]; then
+   apt-get install libfreetype6-dev librsvg2-bin plotutils -y
+elif [[ $OS == 'Darwin' ]]; then
+   brew install freetype
+fi
+
   echo "must use system python!!! sudo port select python python27-apple"
   cd ~/.ha100/vim.symlink/bundle/voltron
   pip install pyyaml
@@ -101,7 +108,7 @@ installVoltron() {
   sudo port install plotutils
   sudo easy_install scruffy
   sudo easy_install scruffington
-  ./install.sh
+  ./install.sh -b gdb,lldb -S
   sudo pip install voltron-web
   echo "checkout http://localhost:5555"
 }
