@@ -20,22 +20,24 @@ wget hhttps://raw.githubusercontent.com/ha100/dotfiles/master/bootstrap -O - | s
 
 ## Basic Usage
 
-| no  | comment | hotKeys |
-|:----- | :------ | :------ |
-|  1) | fileInspector on the left | CTRL + N |
-|  2) | tagBar on the right | F8 |
-|  3) | remove whiteSpace in th file | F1 |
-|  4) | toggle sourceCode syntax check & linter | F4 |
-|  5) | show undoTree | F5 |
-|  6) | toggle lineNumbers to relative & back | SPACE + n + n |
-|  7) | open new file in buffer | :e fileName.swift |
-|  8) | easy switch buffers | SPACE + [1...9] |
-|  9) | fuzzy file finder | CTRL + P |
-| 10) | move between window splits | CTRL + [HJKL] |
-| 11) | create new tmux window | CTRL + B + C |
-| 12) | move between tmux windows | CTRL + B + [PN] |
-| 13) | comment out the line | gcc, gcip, gc3j |
-| 14) | display / hide visual indentation lines | SPACE + l |
+| no  | comment | hotKeys | info |
+|:----- | :------ | :------ ||
+|  1) | fileInspector on the left | <CTRL-n> ||
+|  2) | tagBar on the right | F8 ||
+|  3) | remove whiteSpace in th file | F1 ||
+|  4) | toggle sourceCode syntax check & linter | F4 ||
+|  5) | show undoTree | F5 ||
+|  6) | toggle lineNumbers to relative & back | <SPACE-n> + n ||
+|  7) | open new file in buffer | :e fileName.swift ||
+|  8) | easy switch buffers | <SPACE-[1...9]> ||
+|  9) | fuzzy file finder | CTRL + P | <CTRL-f> and <CTRL-b> to cycle between modes |
+| 10) | move between window splits | <CTRL-[hjkl]> ||
+| 11) | create new tmux window | <CTRL-b> + c ||
+| 12) | move between tmux windows | <CTRL-b> + [pn] ||
+| 13) | comment out the line | gcc, gcip, gc3j ||
+| 14) | display / hide visual indentation lines | <SPACE-l> ||
+| 15) | wrap a word in quotes | ciw "" ESC P | move cursor to any letter of the word |
+| 16) | indent visual block | <shift->> or <shift-<> ||
 
 ## Errors
 
