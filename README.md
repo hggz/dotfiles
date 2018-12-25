@@ -21,7 +21,7 @@ wget hhttps://raw.githubusercontent.com/ha100/dotfiles/master/bootstrap -O - | s
 ## Basic Usage
 
 | no  | comment | hotKeys | info |
-|:----- | :------ | :------ ||
+|:----- | :------ | :------ | :----- |
 |  1) | fileInspector on the left | <CTRL-n> ||
 |  2) | tagBar on the right | F8 ||
 |  3) | remove whiteSpace in th file | F1 ||
